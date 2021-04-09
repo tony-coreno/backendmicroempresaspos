@@ -5,7 +5,6 @@ const cors = require('cors');
 const bodyparser = require('body-parser');
 require('./database');
 //Puerto
-
 app.set('Port', 4000)
 app.use(morgan('dev'))
 app.use(bodyparser.urlencoded({extended:true}))
@@ -20,6 +19,15 @@ app.use('/administrador', require('./routes/Administrador.route'))
 
 app.use('/empleados', require('./routes/Empleado.route'))
 
-app.listen(app.get('Port'),()=>{
-    console.log('Servidor esuchando el puerto', app.get('Port'))
-})
+
+//Ruta productos
+
+app.use('/productos',require('./routes/Producto.route'))
+
+//Ruta Sistema
+
+app.use('/sistema', require('./routes/Sistema.routes'))
+
+ app.listen(app.get('Port'),()=>{
+     console.log('Servidor esuchando el puerto', app.get('Port'))
+ })
