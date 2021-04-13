@@ -10,6 +10,11 @@ router.post('/agregar', ProductoCtrl.agregarProducto);
 router.get('/listarporadmin/:id', ProductoCtrl.productosAdmin);
 
 
+//Enviar a carrito
+router.get('/carrito/:id', ProductoCtrl.productoACarrito);
+
+//Eliminar
+
 router.delete('/eliminar/:id',ProductoCtrl.eliminar)
 
 //Buscar producto por nombre y ID de admin correspondiente
