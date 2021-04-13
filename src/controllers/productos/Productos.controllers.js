@@ -47,4 +47,11 @@ ProductoCtrl.productosAdmin = async (req, res)=>{
     })
   }
 
+
+ProductoCtrl.buscarProducto = async(req, res)=>{
+    const {producto, id} = req.params
+    const respuesta = await Producto.find({producto: {$regex: ".*"+producto+".*"},jefe:id})
+    res.json(respuesta)
+  }
+
 module.exports = ProductoCtrl;

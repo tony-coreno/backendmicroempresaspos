@@ -33,7 +33,8 @@ EmpleadoCtrl.crearEmpleado = async (req, res) => {
       res.json({
           mensaje: 'El numero de empleado ya existe'
       })
-  }else{
+  }
+  else{
       NuevoEmpleado.contrasena = await bcrypt.hash(contrasena, 10)
       const token = jwt.sign({_id:NuevoEmpleado._id}, 'empleado')
       await NuevoEmpleado.save()
