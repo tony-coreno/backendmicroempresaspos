@@ -8,6 +8,7 @@ const ProductoSchema = new Schema({
     categoria:String,
     unidad:String,
     estado:String,
+    talla:String,
     jefe:String
 
 

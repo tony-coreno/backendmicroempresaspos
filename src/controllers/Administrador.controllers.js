@@ -12,10 +12,12 @@ AdministradorCtrl.crearAdmin = async (req, res) => {
     apellidomaterno,
     usuario,
     contrasena,
+    negocio,
+    fecharegistro
   } = req.body
   
   const NuevoAdministrador = new Administrador({
-      nombre,apellidopaterno,apellidomaterno,usuario,contrasena
+      nombre,apellidopaterno,apellidomaterno,usuario,contrasena,negocio,fecharegistro
   })
   const usuarioadmin = await Administrador.findOne({usuario:usuario})
   if(usuarioadmin){
@@ -30,6 +32,7 @@ AdministradorCtrl.crearAdmin = async (req, res) => {
           mensaje: 'Bienvenido',
           id: NuevoAdministrador._id,
           nombre: NuevoAdministrador.nombre,
+          negocio: NuevoAdministrador.negocio,
           token
       })
   }
@@ -52,6 +55,7 @@ AdministradorCtrl.login = async (req, res)=>{
             mensaje: 'Bienvenido',
             id: administrador._id,
             nombre: administrador.nombre,
+            negocio:administrador.negocio,
             token
         })
     }else{
