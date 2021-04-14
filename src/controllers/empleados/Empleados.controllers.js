@@ -94,5 +94,34 @@ EmpleadoCtrl.buscarEmpleado = async(req, res)=>{
   res.json(respuesta)
 }
 
+EmpleadoCtrl.login = async (req, res)=>{
+  const { usuario, contrasena } = req.body
+  const empleado = await Empleado.findOne({usuario:usuario})
+  if(!empleado){
+      return res.json({
+          mensaje: 'Usuario incorrecto'
+      })
+  }
+  //Se valida la contraseña de la BD
+  const match = await bcrypt.compare(contrasena, empleado.contrasena)
+
+  if(match){
+      const token = jwt.sign({_id:empleado._id}, 'empleado')
+      res.json({
+          mensaje: 'Bienvenido',
+          id: empleado._id,
+          nombre: empleado.nombre,
+          negocio:empleado.negocio,
+          perfil:empleado.perfil,
+          token
+      })
+  }else{
+      res.json({
+          mensaje: 'Contrasena Incorrecta'
+      })
+  }
+
+}
+
 
 module.exports = EmpleadoCtrl

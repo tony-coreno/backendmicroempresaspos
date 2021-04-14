@@ -1,6 +1,7 @@
 const {Router} = require('express')
 const router = Router()
 const EmpleadoCtrl = require('../controllers/empleados/Empleados.controllers')
+const AuthEmpleados = require('../helpers/Auth.Empleados')
 const Auth = require('../helpers/Auth')
 //Ruta
 
@@ -30,6 +31,10 @@ router.put('/actualizar/:id', EmpleadoCtrl.actualizar)
 //Buscar por nombre de empleado
 
 router.get('/buscar/:nombre/:id',Auth.verificartoken, EmpleadoCtrl.buscarEmpleado)
+
+
+//Ruta login
+router.post('/login', EmpleadoCtrl.login)
 
 module.exports = router
 

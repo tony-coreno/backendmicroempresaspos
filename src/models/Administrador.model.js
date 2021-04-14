@@ -7,7 +7,8 @@ const AdministradorSchema = new Schema ({
     usuario: String,
     contrasena: String,
     negocio: String,
-    fecharegistro: Date
+    fecharegistro: Date,
+    perfil: String
 
 })
 
