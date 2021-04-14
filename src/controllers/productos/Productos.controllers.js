@@ -55,8 +55,8 @@ ProductoCtrl.buscarProducto = async(req, res)=>{
   }
 
   ProductoCtrl.productoACarrito = async (req, res)=>{
-    const id = req.params.id
-    const respuesta = await Producto.find({_id:id})
+    const sku = req.params.sku
+    const respuesta = await Producto.find({sku:sku})
     res.json(respuesta)
   }
 

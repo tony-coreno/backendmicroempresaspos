@@ -11,7 +11,7 @@ router.get('/listarporadmin/:id', ProductoCtrl.productosAdmin);
 
 
 //Enviar a carrito
-router.get('/carrito/:id', ProductoCtrl.productoACarrito);
+router.get('/carrito/:sku', ProductoCtrl.productoACarrito);
 
 //Eliminar
 
