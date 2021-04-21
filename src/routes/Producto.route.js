@@ -4,7 +4,7 @@ const ProductoCtrl = require('../controllers/productos/Productos.controllers');
 const Auth = require('../helpers/Auth')
 //Ruta para agregar el producto (POST)
 
-router.post('/agregar', ProductoCtrl.agregarProducto);
+router.post('/agregar',Auth.verificartoken, ProductoCtrl.agregarProducto);
 
 
 router.get('/listarporadmin/:id', ProductoCtrl.productosAdmin);
