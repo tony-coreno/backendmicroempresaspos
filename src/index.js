@@ -28,6 +28,10 @@ app.use('/productos',require('./routes/Producto.route'))
 
 app.use('/sistema', require('./routes/Sistema.routes'))
 
+//Ruta clientes
+
+app.use('/clientes', require('./routes/Clientes.route') )
+
  app.listen(app.get('Port'),()=>{
      console.log('Servidor esuchando el puerto', app.get('Port'))
  })

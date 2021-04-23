@@ -9,6 +9,7 @@ const ClienteSchema = new Schema({
   fecharegistro: Date,
   correo: String,
   perfil: String,
+  jefe:String,
   comprascliente: [
     {
       fechacompra: Date,
