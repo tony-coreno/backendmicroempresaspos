@@ -30,7 +30,11 @@ app.use('/sistema', require('./routes/Sistema.routes'))
 
 //Ruta clientes
 
-app.use('/clientes', require('./routes/Clientes.route') )
+app.use('/clientes', require('./routes/Clientes.route'))
+
+//Ruta Proveedores
+
+app.use('/proveedores', require('./routes/Proveedores.route'))
 
  app.listen(app.get('Port'),()=>{
      console.log('Servidor esuchando el puerto', app.get('Port'))
