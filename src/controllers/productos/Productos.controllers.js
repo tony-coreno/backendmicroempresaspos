@@ -5,12 +5,13 @@ const jwt = require('jsonwebtoken');
 //Controlador agregar producto
 
 ProductoCtrl.agregarProducto = async(req, res) => {
-    const { sku,producto,existencia,precioventa,categoria,unidad,estado,jefe,talla} = req.body
+    const { sku,producto,existencia,precioventa,categoria,marca,unidad,estado,jefe,talla} = req.body
     const NuevoProducto = new Producto({
         sku,
         producto,
         existencia,
         precioventa,
+        marca,
         categoria,
         unidad,
         estado,
@@ -39,6 +40,13 @@ ProductoCtrl.productosAdmin = async (req, res)=>{
     const respuesta = await Producto.find({jefe:id})
     res.json(respuesta)
   }
+
+ ProductoCtrl.productosAdminEmpleado = async (req, res)=>{
+     const jefe = req.params.jefe
+     const respuesta = await Producto.find({jefe:jefe})
+     res.json(respuesta)
+   }
+
 
   ProductoCtrl.eliminar = async(req, res)=>{
     const id = req.params.id

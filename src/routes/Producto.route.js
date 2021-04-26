@@ -9,6 +9,7 @@ router.post('/agregar',Auth.verificartoken, ProductoCtrl.agregarProducto);
 
 router.get('/listarporadmin/:id', ProductoCtrl.productosAdmin);
 
+router.get('/listarporadmin/:jefe', ProductoCtrl.productosAdminEmpleado);
 
 //Enviar a carrito
 router.get('/carrito/:sku', ProductoCtrl.productoACarrito);
