@@ -51,7 +51,7 @@ ProveedoresCtrl.crearProveedor = async (req, res) => {
 // Proveedores creados por una sesión administrativa
 ProveedoresCtrl.proveedoresDeAdmin = async (req, res)=>{
     const id = req.params.id
-    const respuesta = await Cliente.find({jefe:id})
+    const respuesta = await Proveedor.find({jefe:id})
     res.json(respuesta)
   }
 
