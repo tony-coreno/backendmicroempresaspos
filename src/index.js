@@ -36,6 +36,8 @@ app.use('/clientes', require('./routes/Clientes.route'))
 
 app.use('/proveedores', require('./routes/Proveedores.route'))
 
+app.use('/ventas', require('./routes/Ventas.route'))
+
  app.listen(app.get('Port'),()=>{
      console.log('Servidor esuchando el puerto', app.get('Port'))
  })
