@@ -41,6 +41,12 @@ ProductoCtrl.productosAdmin = async (req, res)=>{
     res.json(respuesta)
   }
 
+  ProductoCtrl.marcasAdmin = async (req, res)=>{
+    const id = req.params.id
+    const respuesta = await Producto.find({jefe:id})
+    res.json(respuesta)
+  }
+
  ProductoCtrl.productosAdminEmpleado = async (req, res)=>{
      const jefe = req.params.jefe
      const respuesta = await Producto.find({jefe:jefe})

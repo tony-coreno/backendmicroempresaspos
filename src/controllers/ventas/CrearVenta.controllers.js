@@ -38,4 +38,11 @@ CrearVentaCtrl.nuevaVenta = async (req, res) => {
   })
 };
 
+CrearVentaCtrl.ventasDia = async (req, res)=>{
+  const fecha = req.params.fecha
+  const respuesta = await CrearVenta.find({fechaventa:fecha})
+  res.json(respuesta)
+}
+
+
 module.exports = CrearVentaCtrl;
