@@ -11,4 +11,6 @@ router.post('/crear',ProveedoresCtrl.crearProveedor);
 
 router.get('/proveedorporadmin/:id',ProveedoresCtrl.proveedoresDeAdmin);
 
+router.get('/buscar/:id',ProveedoresCtrl.buscarProveedor);
+
 module.exports = router;

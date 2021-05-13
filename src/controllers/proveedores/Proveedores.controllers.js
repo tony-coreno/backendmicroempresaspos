@@ -55,5 +55,10 @@ ProveedoresCtrl.proveedoresDeAdmin = async (req, res)=>{
     res.json(respuesta)
   }
 
+  ProveedoresCtrl.buscarProveedor = async (req, res)=>{
+    const id = req.params.id
+    const respuesta = await Proveedor.find({_id:id})
+    res.json(respuesta)
+  }
 
 module.exports = ProveedoresCtrl;
