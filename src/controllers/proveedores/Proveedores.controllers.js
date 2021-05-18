@@ -61,4 +61,19 @@ ProveedoresCtrl.proveedoresDeAdmin = async (req, res)=>{
     res.json(respuesta)
   }
 
+
+  ProveedoresCtrl.actualizar = async (req, res) => {
+    const id = req.params.id;
+    await Proveedor.findByIdAndUpdate({ _id: id }, req.body);
+    res.json({ mensaje: "Proveedor actualizado" });
+  };
+
+  ProveedoresCtrl.eliminar = async(req, res)=>{
+    const id = req.params.id
+    await Proveedor.findByIdAndRemove({_id:id})
+    res.json({
+      mensaje: 'Proveedor Eliminado'
+    })
+  }
+  
 module.exports = ProveedoresCtrl;
