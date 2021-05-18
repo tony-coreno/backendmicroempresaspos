@@ -52,8 +52,7 @@ ProductoCtrl.productosAdmin = async (req, res)=>{
      const respuesta = await Producto.find({jefe:jefe})
      res.json(respuesta)
    }
-
-
+   
   ProductoCtrl.eliminar = async(req, res)=>{
     const id = req.params.id
     await Producto.findByIdAndRemove({_id:id})
@@ -62,13 +61,11 @@ ProductoCtrl.productosAdmin = async (req, res)=>{
     })
   }
 
-
 ProductoCtrl.buscarProducto = async(req, res)=>{
     const {producto, id} = req.params
     const respuesta = await Producto.find({producto: {$regex: ".*"+producto+".*"},jefe:id})
     res.json(respuesta)
   }
-
 
   ProductoCtrl.productoACarrito = async (req, res)=>{
     const sku = req.params.sku
