@@ -39,8 +39,8 @@ CrearVentaCtrl.nuevaVenta = async (req, res) => {
 };
 
 CrearVentaCtrl.ventasDia = async (req, res)=>{
-  const fecha = req.params.fecha
-  const respuesta = await CrearVenta.find({fechaventa:fecha})
+  const id = req.params.id
+  const respuesta = await CrearVenta.find({jefe:id})
   res.json(respuesta)
 }
 

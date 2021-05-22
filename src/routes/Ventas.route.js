@@ -8,7 +8,7 @@ router.post('/crearventa', CrearVentaCtrl.nuevaVenta);
 
 //Controlador ventas del día
 
-router.get('/ventasdia/:fecha', CrearVentaCtrl.ventasDia);
+router.get('/ventasdia/:id', CrearVentaCtrl.ventasDia);
 
 
 module.exports = router;
