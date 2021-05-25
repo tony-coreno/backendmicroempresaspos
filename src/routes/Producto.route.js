@@ -20,6 +20,9 @@ router.delete('/eliminar/:id',ProductoCtrl.eliminar)
 
 //Buscar producto por nombre y ID de admin correspondiente
 
-router.get('/buscar/:producto/:id',Auth.verificartoken, ProductoCtrl.buscarProducto)
+router.get('/buscar/:producto/:id',Auth.verificartoken, ProductoCtrl.buscarProducto);
+
+//Actualizar Proveedor
+router.put('/actualizar/:id', ProductoCtrl.actualizar);
 
 module.exports = router;
