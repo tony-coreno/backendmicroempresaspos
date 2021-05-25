@@ -14,7 +14,7 @@ const AdministradorSchema = new Schema ({
     apellidomaterno:{
         type: String,
         required: [true, 'El apellido materno es obligatorio']
-    },
+    },  
     usuario:{
         type: String,
         required: [true, 'El usuario es obligatorio']

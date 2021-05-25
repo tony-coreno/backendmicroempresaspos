@@ -10,5 +10,6 @@ router.post('/crear',ClienteCtrl.crearCliente);
 
 router.get('/listarporadmin/:id', ClienteCtrl.clientesDeUnAdmin);
 
-module.exports = router
+module.exports = router;
+
 

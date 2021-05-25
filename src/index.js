@@ -19,7 +19,6 @@ app.use('/administrador', require('./routes/Administrador.route'))
 
 app.use('/empleados', require('./routes/Empleado.route'))
 
-
 //Ruta productos
 
 app.use('/productos',require('./routes/Producto.route'))
@@ -36,7 +35,13 @@ app.use('/clientes', require('./routes/Clientes.route'))
 
 app.use('/proveedores', require('./routes/Proveedores.route'))
 
+//Ruta ventas
+
 app.use('/ventas', require('./routes/Ventas.route'))
+
+//Ruta pagos
+
+app.use('/pagos', require('./routes/Pagos.routes'))
 
  app.listen(app.get('Port'),()=>{
      console.log('Servidor esuchando el puerto', app.get('Port'))
