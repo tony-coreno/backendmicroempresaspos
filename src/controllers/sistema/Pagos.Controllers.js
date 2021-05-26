@@ -48,8 +48,8 @@ PagosCtrl.eliminar = async(req, res)=>{
     const id = req.params.id
     await Pagos.findByIdAndRemove({_id:id})
     res.json({
-      mensaje: 'Producto Eliminado'
-    })
-  }
+      mensaje: "Pago eliminado"
+  })
+}
   
 module.exports = PagosCtrl;
