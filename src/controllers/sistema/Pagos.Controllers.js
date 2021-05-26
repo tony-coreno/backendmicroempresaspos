@@ -6,18 +6,22 @@ const jwt = require("jsonwebtoken");
 
 PagosCtrl.crearPagos = async (req, res) => {
     const {
-        pagos,
-        jefe
+        nombre,
+        jefe,
+        estado
     } = req.body;
     const NuevoPago = new Pagos({
-        pagos,
-        jefe
+        nombre,
+        jefe,
+        estado
     })
     const token = jwt.sign({_id: NuevoPago._id}, 'secreta');
     await NuevoPago.save();
     res.json({
-        mensaje: "Pagos agregados",
-        pagos : NuevoPago.pagos,
+        mensaje: "Pago agregado",
+        nombre : NuevoPago.nombre,
+        jefe : NuevoPago.jefe,
+        estado : NuevoPago.estado,
         token
     })
 }
@@ -26,18 +30,26 @@ PagosCtrl.crearPagos = async (req, res) => {
 
 PagosCtrl.actualizar = async (req, res) => {
     const id = req.params.id;
-    await Producto.findByIdAndUpdate({ _id: id }, req.body);
-    res.json({ mensaje: "Producto actualizado" });
+    await Pagos.findByIdAndUpdate({ _id: id }, req.body);
+    res.json({ mensaje: "Pago actualizado" });
   };
-
 
 // Pagos creados por una cada administrador
 
 PagosCtrl.pagosDeUnAdmin = async (req, res)=>{
     const id = req.params.id
-    const respuesta = await Cliente.find({jefe:id})
+    const respuesta = await Pagos.find({jefe:id})
     res.json(respuesta)
+  };
+
+//Eliminar pago
+
+PagosCtrl.eliminar = async(req, res)=>{
+    const id = req.params.id
+    await Pagos.findByIdAndRemove({_id:id})
+    res.json({
+      mensaje: 'Producto Eliminado'
+    })
   }
-
-
+  
 module.exports = PagosCtrl;

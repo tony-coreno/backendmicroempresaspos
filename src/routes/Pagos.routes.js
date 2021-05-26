@@ -14,5 +14,9 @@ router.get('/pagoadmin/:id', PagosCtrl.pagosDeUnAdmin);
 
 router.put('/actualizar', PagosCtrl.actualizar);
 
+//Ruta eliminar pagos desde el front
+
+router.delete('/eliminar/:id', PagosCtrl.eliminar)
+
 module.exports = router;
 
