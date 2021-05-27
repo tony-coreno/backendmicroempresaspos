@@ -32,7 +32,7 @@ SistemaCtrl.actualizar = async (req, res) => {
 //Obtener el título del sistema
   SistemaCtrl.buscarTitulo = async (req, res)=>{
     const id = req.params.id
-    const respuesta = await Sistema.find({_id:id})
+    const respuesta = await Sistema.find({jefe:id})
     res.json(respuesta)
   };
 
