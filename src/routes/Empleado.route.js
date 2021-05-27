@@ -34,5 +34,8 @@ router.get('/buscar/:nombre/:id',Auth.verificartoken, EmpleadoCtrl.buscarEmplead
 //Ruta login
 router.post('/login', EmpleadoCtrl.login)
 
+//Buscar empleado por ID posteriormente editarlo
+router.get('/buscar/:id', EmpleadoCtrl.empleadoID);
+
 module.exports = router
 

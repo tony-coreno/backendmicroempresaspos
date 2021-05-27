@@ -21,5 +21,20 @@ SistemaCtrl.cambiarTitulo = async (req, res)=>{
     })
 }
 
+//Actualizar el título del Sistema.
+SistemaCtrl.actualizar = async (req, res) => {
+    const id = req.params.id;
+    await Sistema.findByIdAndUpdate({ _id: id }, req.body);
+    res.json({ mensaje: "Sistema actualizado" });
+  };
+
+
+//Obtener el título del sistema
+  SistemaCtrl.buscarTitulo = async (req, res)=>{
+    const id = req.params.id
+    const respuesta = await Sistema.find({_id:id})
+    res.json(respuesta)
+  };
+
 
 module.exports = SistemaCtrl;

@@ -98,6 +98,7 @@ EmpleadoCtrl.buscarEmpleado = async (req, res) => {
   res.json(respuesta);
 };
 
+//Controlador login
 EmpleadoCtrl.login = async (req, res) => {
   const { usuario, contrasena } = req.body;
   const empleado = await Empleado.findOne({ usuario: usuario });
@@ -126,5 +127,14 @@ EmpleadoCtrl.login = async (req, res) => {
     });
   }
 };
+
+//Controlador buscar un empleado por ID
+
+EmpleadoCtrl.empleadoID = async (req, res)=>{
+  const id = req.params.id
+  const respuesta = await Empleado.find({_id:id})
+  res.json(respuesta)
+}
+
 
 module.exports = EmpleadoCtrl;
