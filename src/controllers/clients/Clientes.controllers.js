@@ -77,4 +77,16 @@ ClienteCtrl.clientesDeUnAdmin = async (req, res)=>{
       mensaje: 'Cliente Eliminado'
     })
   }
+
+//Controlador para buscar por nombre cliente similar consulta LIKE
+
+ClienteCtrl.buscarClienteID = async (req, res) => {
+  const { nombre, id } = req.params;
+  const respuesta = await Cliente.find({
+    nombre: { $regex: ".*" + nombre + ".*" },
+    jefe: id,
+  });
+  res.json(respuesta);
+};
+
 module.exports = ClienteCtrl;

@@ -22,6 +22,7 @@ router.put('/actualizar/:id',ClienteCtrl.actualizar);
 
 router.delete('/eliminar/:id', ClienteCtrl.eliminar);
 
+router.get('/buscar/:nombre/:id', ClienteCtrl.buscarClienteID);
 
 module.exports = router;
 
