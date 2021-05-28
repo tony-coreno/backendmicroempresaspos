@@ -12,7 +12,7 @@ router.get('/pagoadmin/:id', PagosCtrl.pagosDeUnAdmin);
 
 //Ruta actualizar pagos desde el frontend
 
-router.put('/actualizar', PagosCtrl.actualizar);
+router.put('/actualizar/:id', PagosCtrl.actualizar);
 
 //Ruta eliminar pagos desde el front
 

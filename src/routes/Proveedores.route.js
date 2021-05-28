@@ -19,4 +19,8 @@ router.put('/actualizar/:id', ProveedoresCtrl.actualizar);
 //Eliminar Proveedor
 router.delete('/eliminar/:id', ProveedoresCtrl.eliminar);
 
+//Buscar coincidencia proveedor por ID
+
+router.get('/buscar/:nombre/:id', ProveedoresCtrl.buscarProveedorID);
+
 module.exports = router;

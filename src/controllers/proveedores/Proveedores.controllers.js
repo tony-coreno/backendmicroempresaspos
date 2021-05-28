@@ -75,5 +75,15 @@ ProveedoresCtrl.proveedoresDeAdmin = async (req, res)=>{
       mensaje: 'Proveedor Eliminado'
     })
   }
+  //Controlador para buscar por nombre empleado similar consulta LIKE
+
+ProveedoresCtrl.buscarProveedorID = async (req, res) => {
+  const { nombre, id } = req.params;
+  const respuesta = await Proveedor.find({
+    nombre: { $regex: ".*" + nombre + ".*" },
+    jefe: id,
+  });
+  res.json(respuesta);
+};
   
 module.exports = ProveedoresCtrl;
