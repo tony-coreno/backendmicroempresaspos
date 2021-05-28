@@ -10,6 +10,19 @@ router.post('/crear',ClienteCtrl.crearCliente);
 
 router.get('/listarporadmin/:id', ClienteCtrl.clientesDeUnAdmin);
 
+//buscar cliente por ID
+
+router.get('/buscar/:id',ClienteCtrl.buscarCliente);
+
+//Actualizar clientes
+
+router.put('/actualizar/:id',ClienteCtrl.actualizar);
+
+//Eliminar cliente
+
+router.delete('/eliminar/:id', ClienteCtrl.eliminar);
+
+
 module.exports = router;
 
 

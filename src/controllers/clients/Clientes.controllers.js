@@ -54,4 +54,27 @@ ClienteCtrl.clientesDeUnAdmin = async (req, res)=>{
     res.json(respuesta)
   }
 
+
+//Buscar Cliente por ID
+  ClienteCtrl.buscarCliente = async (req, res)=>{
+    const id = req.params.id
+    const respuesta = await Cliente.find({_id:id})
+    res.json(respuesta)
+  }
+
+//Actualizar cliente por ID
+  ClienteCtrl.actualizar = async (req, res) => {
+    const id = req.params.id;
+    await Cliente.findByIdAndUpdate({ _id: id }, req.body);
+    res.json({ mensaje: "Cliente actualizado" });
+  };
+
+  //Delete customer by ID
+  ClienteCtrl.eliminar = async(req, res)=>{
+    const id = req.params.id
+    await Cliente.findByIdAndRemove({_id:id})
+    res.json({
+      mensaje: 'Cliente Eliminado'
+    })
+  }
 module.exports = ClienteCtrl;
