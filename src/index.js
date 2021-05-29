@@ -43,6 +43,10 @@ app.use('/ventas', require('./routes/Ventas.route'))
 
 app.use('/pagos', require('./routes/Pagos.routes'))
 
+//Ruta Categorias
+
+app.use('/categorias', require('./routes/Categorias.route'))
+
  app.listen(app.get('Port'),()=>{
      console.log('Servidor esuchando el puerto', app.get('Port'))
  })
