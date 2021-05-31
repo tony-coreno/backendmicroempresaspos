@@ -37,13 +37,15 @@ CategoriasCtrl.actualizar = async (req, res) => {
     res.json(respuesta)
   };
 
-// Obtener categorias de un administrador
+//Categorias Eliminar
 
-// CategoriasCtrl.categoriasAdmin = async (req, res)=>{
-//   const id = req.params.id
-//   const respuesta = await Categoria.find({jefe:id})
-//   res.json(respuesta)
-// };
+CategoriasCtrl.eliminar = async(req, res)=>{
+  const id = req.params.id
+  await Categoria.findByIdAndRemove({_id:id})
+  res.json({
+    mensaje: "Categoria eliminada"
+})
+}
 
 
 module.exports = CategoriasCtrl;
