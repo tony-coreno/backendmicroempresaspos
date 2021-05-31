@@ -25,4 +25,6 @@ router.get('/buscar/:producto/:id',Auth.verificartoken, ProductoCtrl.buscarProdu
 //Actualizar Proveedor
 router.put('/actualizar/:id', ProductoCtrl.actualizar);
 
+router.get('/buscar/:id', ProductoCtrl.buscarProd);
+
 module.exports = router;

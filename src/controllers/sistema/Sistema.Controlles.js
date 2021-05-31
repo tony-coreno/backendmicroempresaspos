@@ -1,7 +1,5 @@
 const SistemaCtrl={}
-
 const Sistema = require('../../models/Sistema.model');
-
 const jwt = require('jsonwebtoken');
 
 //Controlador para cambiar el titulo por sesion
@@ -27,8 +25,7 @@ SistemaCtrl.actualizar = async (req, res) => {
     await Sistema.findByIdAndUpdate({ _id: id }, req.body);
     res.json({ mensaje: "Sistema actualizado" });
   };
-
-
+  
 //Obtener el título del sistema
   SistemaCtrl.buscarTitulo = async (req, res)=>{
     const id = req.params.id
