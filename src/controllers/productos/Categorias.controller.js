@@ -37,5 +37,13 @@ CategoriasCtrl.actualizar = async (req, res) => {
     res.json(respuesta)
   };
 
+// Obtener categorias de un administrador
+
+// CategoriasCtrl.categoriasAdmin = async (req, res)=>{
+//   const id = req.params.id
+//   const respuesta = await Categoria.find({jefe:id})
+//   res.json(respuesta)
+// };
+
 
 module.exports = CategoriasCtrl;

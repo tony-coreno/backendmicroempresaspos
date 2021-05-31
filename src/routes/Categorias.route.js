@@ -10,4 +10,6 @@ router.put('/actualizar/:id', CategoriasCtrl.actualizar);
 
 router.get('/obtener/:id',CategoriasCtrl.buscarCategorias);
 
+// router.get('/categorias/:id', CategoriasCtrl.categoriasAdmin);
+
 module.exports = router;
