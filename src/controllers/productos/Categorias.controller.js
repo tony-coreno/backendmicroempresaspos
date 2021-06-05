@@ -47,5 +47,12 @@ CategoriasCtrl.eliminar = async(req, res)=>{
 })
 }
 
+//Coincidencia Categoría
+
+CategoriasCtrl.coincidenciaCategoria = async(req, res)=>{
+  const {nombre, id} = req.params
+  const respuesta = await Categoria.find({nombre: {$regex: ".*"+nombre+".*"},jefe:id})
+  res.json(respuesta)
+}
 
 module.exports = CategoriasCtrl;

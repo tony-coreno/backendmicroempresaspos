@@ -47,6 +47,10 @@ app.use('/pagos', require('./routes/Pagos.routes'))
 
 app.use('/categorias', require('./routes/Categorias.route'))
 
+//Ruta Unidades
+
+app.use('/unidades', require('./routes/Unidades.route'))
+
  app.listen(app.get('Port'),()=>{
      console.log('Servidor esuchando el puerto', app.get('Port'))
  })
