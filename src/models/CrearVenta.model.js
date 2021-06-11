@@ -1,6 +1,6 @@
 const moongose = require('mongoose');
 const {Schema} = moongose;
-let f = new Date();
+// let f = new Date();
 const CrearVentaSchema = new Schema({
 
     idusuario:{
@@ -12,7 +12,9 @@ const CrearVentaSchema = new Schema({
     },
     fechaventa:{
         type: Date,
-        default: `${f}`,
+    },
+    fecha:{
+        type: Number
     },
     jefe:{
         type: String,
