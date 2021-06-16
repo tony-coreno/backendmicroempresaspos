@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
- URI = ('mongodb://localhost/pos');
-// URI =(`mongodb+srv://admin:adminf@pos.sdk0h.mongodb.net/pos?retryWrites=true&w=majority`)
+ //URI = ('mongodb://localhost/pos');
+URI =(process.env.MONGO_CNN)
 mongoose.connect(URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
