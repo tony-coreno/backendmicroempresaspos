@@ -16,6 +16,8 @@ EmpleadoCtrl.crearEmpleado = async (req, res) => {
     perfil,
     estado,
     jefe,
+    fecharegistro,
+    imagen
   } = req.body;
   const NuevoEmpleado = new Empleado({
     nombre,
@@ -27,6 +29,8 @@ EmpleadoCtrl.crearEmpleado = async (req, res) => {
     perfil,
     estado,
     jefe,
+    fecharegistro,
+    imagen
   });
   const numempleado = await Empleado.findOne({
     numeroempleado: numeroempleado,

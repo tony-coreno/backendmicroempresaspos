@@ -42,7 +42,11 @@ const ProductoSchema = new Schema({
         type: String,
         required: [true, 'Es necesario un administrador']
     },
+    imagen:{
+        type: String,
+        default: "https://img.icons8.com/cute-clipart/64/000000/shopping-cart-loaded.png"
+    },
 
 })
 
-module.exports = mongoose.model('productos', ProductoSchema);
+module.exports = mongoose.model('producto', ProductoSchema);

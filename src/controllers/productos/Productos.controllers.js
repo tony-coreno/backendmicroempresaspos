@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 //Controlador agregar producto
 
 ProductoCtrl.agregarProducto = async(req, res) => {
-    const { sku,producto,existencia,precioventa,categoria,marca,unidad,estado,jefe,talla, cantidad} = req.body
+    const { sku,producto,existencia,precioventa,categoria,marca,unidad,estado,jefe,imagen, cantidad} = req.body
     const NuevoProducto = new Producto({
         sku,
         producto,
@@ -17,7 +17,7 @@ ProductoCtrl.agregarProducto = async(req, res) => {
         unidad,
         estado,
         jefe,
-        talla
+        imagen
     })
     const skuagregado = await Producto.findOne({sku:sku})
     if (skuagregado){
@@ -64,7 +64,7 @@ ProductoCtrl.productosAdmin = async (req, res)=>{
 
 ProductoCtrl.buscarProducto = async(req, res)=>{
     const {producto, id} = req.params
-    const respuesta = await Producto.find({producto: {$regex: ".*"+producto+".*"},jefe:id})
+    const respuesta = await Producto.find({producto: {$regex: ".*"+producto.toLowerCase()+".*"},jefe:id})
     res.json(respuesta)
   }
 

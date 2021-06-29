@@ -32,6 +32,10 @@ const AdministradorSchema = new Schema ({
         type: Date,
         default: `${f}`
     },
+    fecha:{
+        type: Number,
+        default: Date.now()
+    },
     perfil:{
         type: String,
         default: "Administrador"

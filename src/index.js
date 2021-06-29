@@ -3,12 +3,12 @@ const app = express();
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyparser = require('body-parser');
-//require('dotenv').config();
+require('dotenv').config();
 
 require('./database');
 //Puerto
-//app.set('Port', process.env.PORT)
-app.set('Port', 4000)
+app.set('Port', process.env.PORT)
+//app.set('Port', 4000)
 app.use(morgan('dev'))
 app.use(bodyparser.urlencoded({extended:true}))
 app.use(bodyparser.json())

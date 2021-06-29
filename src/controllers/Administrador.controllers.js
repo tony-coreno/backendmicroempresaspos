@@ -14,11 +14,12 @@ AdministradorCtrl.crearAdmin = async (req, res) => {
     contrasena,
     negocio,
     fecharegistro,
+    fecha,
     perfil
   } = req.body
   
   const NuevoAdministrador = new Administrador({
-      nombre,apellidopaterno,apellidomaterno,usuario,contrasena,negocio,fecharegistro,perfil
+      nombre,apellidopaterno,apellidomaterno,usuario,contrasena,negocio,fecharegistro,perfil,fecha
   })
   const usuarioadmin = await Administrador.findOne({usuario:usuario})
   if(usuarioadmin){
