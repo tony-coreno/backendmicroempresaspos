@@ -14,6 +14,7 @@ ProveedoresCtrl.crearProveedor = async (req, res) => {
     correo,
     perfil,
     jefe,
+    imagen,
   } = req.body;
   const NuevoProveedor = new Proveedor({
     nombre,
@@ -26,6 +27,7 @@ ProveedoresCtrl.crearProveedor = async (req, res) => {
     correo,
     perfil,
     jefe,
+    imagen
   });
   const codigoDeProveedor = await Proveedor.findOne({
     codigoproveedor: codigoproveedor,

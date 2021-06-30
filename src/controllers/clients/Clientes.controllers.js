@@ -14,6 +14,8 @@ ClienteCtrl.crearCliente = async (req, res) => {
     correo,
     perfil,
     jefe,
+    fecha,
+    imagen
   } = req.body;
   const NuevoCliente = new Cliente({
     nombre,
@@ -25,6 +27,8 @@ ClienteCtrl.crearCliente = async (req, res) => {
     correo,
     perfil,
     jefe,
+    fecha,
+    imagen
   });
   const codigoPromocionalCliente = await Cliente.findOne({
     codigopromocional: codigopromocional,
