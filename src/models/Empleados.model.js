@@ -42,6 +42,7 @@ const EmpleadoSchema = new Schema({
   },
   fecharegistro: {
     type: Number,
+    default: Date.now()
   },
 });
 

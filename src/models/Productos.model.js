@@ -46,6 +46,10 @@ const ProductoSchema = new Schema({
         type: String,
         default: "https://img.icons8.com/cute-clipart/64/000000/shopping-cart-loaded.png"
     },
+    fecha:{
+        type: Number,
+        default: Date.now()
+    }
 
 })
 

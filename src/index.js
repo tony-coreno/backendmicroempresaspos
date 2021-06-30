@@ -54,6 +54,10 @@ app.use('/categorias', require('./routes/Categorias.route'))
 
 app.use('/unidades', require('./routes/Unidades.route'))
 
+//Ruta corte caja
+
+app.use('/corte', require('./routes/CorteCaja.routes'))
+
  app.listen(app.get('Port'),()=>{
      console.log('Servidor esuchando el puerto', app.get('Port'))
  })

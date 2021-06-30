@@ -14,7 +14,8 @@ const CrearVentaSchema = new Schema({
         type: Date,
     },
     fecha:{
-        type: Number
+        type: Number,
+        default: Date.now()
     },
     jefe:{
         type: String,
