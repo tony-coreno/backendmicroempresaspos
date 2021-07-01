@@ -9,9 +9,8 @@ const ClienteSchema = new Schema({
     type: String,
     required: [true, 'Ingrese apellido']
   },
-  tipoCliente:{
+  tipocliente:{
     type: String,
-    required: [true, 'Ingrese una categoría']
   },
   codigopromocional:{
     type:Number,
