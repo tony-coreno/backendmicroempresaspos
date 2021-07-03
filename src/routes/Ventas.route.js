@@ -10,6 +10,10 @@ router.post('/crearventa', CrearVentaCtrl.nuevaVenta);
 
 router.get('/ventasdia/:id', CrearVentaCtrl.ventasDia);
 
+//Controlador ventas del día por empleado
+
+router.get('/empleado/:usuario', CrearVentaCtrl.ventasDiaEmpleado);
+
 
 module.exports = router;
 

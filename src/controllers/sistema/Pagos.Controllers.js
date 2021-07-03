@@ -42,6 +42,14 @@ PagosCtrl.pagosDeUnAdmin = async (req, res)=>{
     res.json(respuesta)
   };
 
+//Pagos empleado
+
+  PagosCtrl.pagosAdminEmpleado = async (req, res) => {
+    const jefe = req.params.jefe;
+    const respuesta = await Producto.find({ jefe: jefe });
+    res.json(respuesta);
+  };
+  
 //Eliminar pago
 
 PagosCtrl.eliminar = async(req, res)=>{

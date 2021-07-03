@@ -10,6 +10,8 @@ router.post('/crear',PagosCtrl.crearPagos);
 
 router.get('/pagoadmin/:id', PagosCtrl.pagosDeUnAdmin);
 
+router.get('/pagoadmin/:jefe', PagosCtrl.pagosAdminEmpleado);
+
 //Ruta actualizar pagos desde el frontend
 
 router.put('/actualizar/:id', PagosCtrl.actualizar);

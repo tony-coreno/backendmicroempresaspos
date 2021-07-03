@@ -15,8 +15,8 @@ CrearVentaCtrl.nuevaVenta = async (req, res) => {
     descuentoaplicado,
     idcompra,
     idticket,
-    articulos
-  } = req.body
+    articulos,
+  } = req.body;
   const Venta = new CrearVenta({
     idusuario,
     usuario,
@@ -31,20 +31,25 @@ CrearVentaCtrl.nuevaVenta = async (req, res) => {
     idcompra,
     idticket,
     articulos,
-  })
-  await Venta.save()
+  });
+  await Venta.save();
   res.json({
-      mensaje: 'Venta exitosa',
-      id:Venta._id,
-      total:Venta.total
-  })
+    mensaje: "Venta exitosa",
+    id: Venta._id,
+    total: Venta.total,
+  });
 };
 
-CrearVentaCtrl.ventasDia = async (req, res)=>{
-  const id = req.params.id
-  const respuesta = await CrearVenta.find({jefe:id})
-  res.json(respuesta)
-}
+CrearVentaCtrl.ventasDia = async (req, res) => {
+  const id = req.params.id;
+  const respuesta = await CrearVenta.find({ jefe: id });
+  res.json(respuesta);
+};
 
+CrearVentaCtrl.ventasDiaEmpleado = async (req, res) => {
+  const id = req.params.id;
+  const respuesta = await CrearVenta.find({ idusuario: id });
+  res.json(respuesta);
+};
 
 module.exports = CrearVentaCtrl;
