@@ -39,6 +39,10 @@ const AdministradorSchema = new Schema ({
     perfil:{
         type: String,
         default: "Administrador"
+    },
+    imagen:{
+        type: String,
+        default: "https://img.icons8.com/officel/80/000000/person-male.png",
     }
 
 })

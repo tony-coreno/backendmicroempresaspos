@@ -123,6 +123,7 @@ EmpleadoCtrl.login = async (req, res) => {
       negocio: empleado.negocio,
       perfil: empleado.perfil,
       jefe: empleado.jefe,
+      imagen: empleado.imagen,
       token,
     });
   } else {

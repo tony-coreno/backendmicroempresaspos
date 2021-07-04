@@ -15,11 +15,12 @@ AdministradorCtrl.crearAdmin = async (req, res) => {
     negocio,
     fecharegistro,
     fecha,
-    perfil
+    perfil,
+    imagen
   } = req.body
   
   const NuevoAdministrador = new Administrador({
-      nombre,apellidopaterno,apellidomaterno,usuario,contrasena,negocio,fecharegistro,perfil,fecha
+      nombre,apellidopaterno,apellidomaterno,usuario,contrasena,negocio,fecharegistro,perfil,fecha,imagen
   })
   const usuarioadmin = await Administrador.findOne({usuario:usuario})
   if(usuarioadmin){
@@ -60,6 +61,7 @@ AdministradorCtrl.login = async (req, res)=>{
             nombre: administrador.nombre,
             negocio:administrador.negocio,
             perfil: administrador.perfil,
+            imagen: administrador.imagen,
             token
         })
     }else{
@@ -69,6 +71,13 @@ AdministradorCtrl.login = async (req, res)=>{
     }
 
 }
+
+AdministradorCtrl.actualizar = async (req, res) => {
+    const id = req.params.id;
+    await Administrador.findByIdAndUpdate({ _id: id }, req.body);
+    res.json({ mensaje: "Admin actualizado" });
+  };
+  
 
 
 module.exports = AdministradorCtrl;
