@@ -49,6 +49,10 @@ const ProductoSchema = new Schema({
     fecha:{
         type: Number,
         default: Date.now()
+    },
+    fecharegistro:{
+        type: Date,
+        default: new Date()
     }
 
 })

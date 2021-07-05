@@ -18,6 +18,7 @@ ProductoCtrl.agregarProducto = async (req, res) => {
     imagen,
     cantidad,
     fecha,
+    fecharegistro,
   } = req.body;
   const NuevoProducto = new Producto({
     sku,
@@ -32,6 +33,7 @@ ProductoCtrl.agregarProducto = async (req, res) => {
     jefe,
     imagen,
     fecha,
+    fecharegistro,
   });
   const skuagregado = await Producto.findOne({ sku: sku });
   if (skuagregado) {
