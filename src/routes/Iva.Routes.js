@@ -8,6 +8,6 @@ router.post("/guardar", IvaCtrl.guardarIva);
 
 router.get("/encontrar/:id", IvaCtrl.buscarIva);
 
-router.put("/actualizar", IvaCtrl.actualizar);
+router.put("/actualizar/:id", IvaCtrl.actualizar);
 
 module.exports = router;
