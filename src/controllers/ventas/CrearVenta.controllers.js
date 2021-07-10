@@ -46,6 +46,12 @@ CrearVentaCtrl.ventasDia = async (req, res) => {
   res.json(respuesta);
 };
 
+CrearVentaCtrl.localizarVenta = async (req, res) => {
+  const idcompra = req.params.idcompra;
+  const respuesta = await CrearVenta.find({ idcompra: idcompra });
+  res.json(respuesta);
+};
+
 CrearVentaCtrl.ventasDiaEmpleado = async (req, res) => {
   const id = req.params.id;
   const respuesta = await CrearVenta.find({ idusuario: id });

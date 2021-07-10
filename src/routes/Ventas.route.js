@@ -14,6 +14,7 @@ router.get('/ventasdia/:id', CrearVentaCtrl.ventasDia);
 
 router.get('/empleado/:usuario', CrearVentaCtrl.ventasDiaEmpleado);
 
+router.get('/buscar/:idcompra', CrearVentaCtrl.localizarVenta);
 
 module.exports = router;
 

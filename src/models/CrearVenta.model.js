@@ -1,6 +1,7 @@
 const moongose = require('mongoose');
 const {Schema} = moongose;
 // let f = new Date();
+let ID = require("nodejs-unique-numeric-id-generator")
 const CrearVentaSchema = new Schema({
 
     idusuario:{
@@ -42,7 +43,8 @@ const CrearVentaSchema = new Schema({
         default: false
     },
     idcompra:{
-        type: String
+        type: Number,
+        default: Math.round(Math.random()*10000000),
     },
     idticket:{
         type: String
